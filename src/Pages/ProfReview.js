@@ -1,10 +1,10 @@
 import React from 'react';
-import Topnav from '../Component/Topnav';
+import Nav from '../Component/nav';
 
 function ProfReview() {
     return (
       <div>
-        <Topnav></Topnav>
+        <Nav></Nav>
       </div>
     );
   }

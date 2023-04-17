@@ -1,19 +1,24 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login';
+import Main from './Pages/Main';
 import Edit from './Pages/EditProfile';
 import TimetablePage from './Pages/TimetablePage';
 import ProfReview from './Pages/ProfReview';
 import './App.css';
+import Signup from './Pages/Signup';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />}></Route>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="/Login" element={<Login />}></Route>
         <Route path="/timetable" element={<TimetablePage />}></Route>
         <Route path="/profreview" element={<ProfReview />}></Route>
+        <Route path="/Signup" element={<Signup />}></Route>
+        {/* <Route path="/EditProfile" element={<Edit />}></Route> */}
       </Routes>
       </BrowserRouter>
     </div>
