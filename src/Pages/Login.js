@@ -24,7 +24,11 @@ function Login() {
           <input type="password" placeholder="password" />
           <button>login</button>
           <p className="message">Not registered? <a href="Signup">Create an account</a></p>
+          <p className="other-way-to-signin">-----Easier Sign-in-----</p>
+          <div className='google-Login'>
           <GoogleLogin></GoogleLogin>
+          </div>
+          
         </form>
       </div>
     </div>

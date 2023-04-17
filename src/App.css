@@ -92,7 +92,13 @@
 .login-form .message a:hover {
   text-decoration: underline;
 }
-
+.other-way-to-signin{
+  font-weight: bold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.google-Login{
+  margin-left: 100px;
+}
 
 /*Nav bar */
 .top-bar {
@@ -193,6 +199,17 @@ button {
 button:hover {
   background-color: #388e3c;
 }
+.input-email{
+  margin-bottom: 0;
+}
+.email-notice{
+  font-size:small;
+  color: red;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  text-align: left;
+}
 /*Main*/
 .image{
   background-image: url(./SUNYKorea_AcBldg.jpg) no-repeat 50% 50% fixed; 
@@ -237,4 +254,84 @@ body{
 
 .timetable__row:last-child .timetable__cell {
   border-bottom: none;
+}
+/* Prof_nav */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  background-color:#61dafb;
+  color: #f8f9fa;
+  font-size: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.navbar-dropdown {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.navbar-label {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.navbar-select {
+  padding: 5px;
+  border-radius: 5px;
+  height: 38px;
+  background-color: #f5f5f5;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-search {
+  padding: 5px;
+  width:400px;
+  height: 25px;
+  margin-top: 18px;
+  margin-right: 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: #f5f5f5;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #007bff;
+  border: none;
+  color: #f8f9fa;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-button:hover {
+  background-color: #0069d9;
+}
+
+.navbar-form {
+  display: flex;
+  align-items: center;
 }

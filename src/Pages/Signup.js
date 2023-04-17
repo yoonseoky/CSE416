@@ -30,11 +30,13 @@ function Signup() {
             onChange={(e) => setLastName(e.target.value)}
           />
           <input
+            className='input-email'
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <p className='email-notice'>You should Sign-up with your school email</p>
           <input
             type="password"
             placeholder="Password"
