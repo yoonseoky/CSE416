@@ -3,14 +3,24 @@ import Nav from '../Component/nav';
 function Signup() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState('');
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you can handle the form submission, for example, by sending the data to a server or performing validation
   };
-
+  const Submit_filter = (firstName,lastName,email,password) =>{
+    console.log(email.slice(-15))
+    if(firstName===''||lastName===''){
+      alert("Please type your name.")
+    }
+    else if(!(email.slice(-14)==='stonybrook.edu'||email.slice(-15)==='sunykorea.ac.kr')){
+      alert("Please use your school email.")
+    }
+    else if(password===''){
+      alert("Please enter the password.")
+    }
+  }
   return (
   <div>
     <Nav></Nav>
@@ -43,7 +53,7 @@ function Signup() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Sign up</button>
+          <button type="submit" onClick={(e)=>Submit_filter(firstName,lastName,email,password)}>Sign up</button>
         </form>
       </div>
     </div>
