@@ -122,19 +122,22 @@
 .nav-links {
   display: flex;
   justify-content: center;
+  text-decoration: none;
+  color: black;
 }
 
 .nav-links a {
   margin-right: 100px;
-  color: #333;
+  color: black;
   text-decoration: none;
   font-weight: 500;
   font-size: 18px;
   transition: color 0.3s ease-in-out;
 }
 
-.nav-links a:hover {
-  color: #666;
+.nav-links a:hover a:visited a:link{
+  color: black;
+  text-decoration: none;
 }
 
 .login-signup {
@@ -152,7 +155,10 @@
 }
 
 .login-signup a:hover {
-  color: #666;
+  color: black;
+}
+.login-profile{
+  width: 20px;
 }
 
 /*Signup*/
@@ -163,16 +169,6 @@
   height: 100vh;
   background-color: #f5f5f5;
 }
-
-/* .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 4px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
-} */
 
 input {
   width: 100%;
@@ -211,10 +207,6 @@ button:hover {
   text-align: left;
 }
 /*Main*/
-.image{
-  background-image: url(./SUNYKorea_AcBldg.jpg) no-repeat 50% 50% fixed; 
-	background-size: cover;
-}
 body{
   background-image: url(./SUNYKorea_AcBldg.jpg);
 }

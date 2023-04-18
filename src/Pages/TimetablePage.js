@@ -3,11 +3,14 @@ import Nav from '../Component/nav';
 import ChatList from '../Component/ChatList';
 import Chat from '../Component/Chat';
 import Timetable from '../Component/Timetable';
+import { useLocation } from 'react-router-dom';
 
 function TimetablePage() {
+    const location = useLocation();
+    const state = location.state.user;
     return (
       <>
-        <Nav></Nav>
+        <Nav user = {state}></Nav>
         <div style={{display: "flex"}}>
 
           <div style={{width: "30%"}}><ChatList></ChatList></div>
