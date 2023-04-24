@@ -7,7 +7,6 @@ function ProfReview() {
     const location = useLocation();
     const state = location.state.user;
     return (
-
       <div>
         <Nav user = {state}></Nav>
         <ProfNav></ProfNav>

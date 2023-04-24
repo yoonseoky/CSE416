@@ -4,9 +4,9 @@ import Nav from '../Component/nav';
 let count = 0;
 function Main(){
     const location = useLocation();
+    console.log("",location);
     const state = location.state.user;
-    console.log(state);
-    if(count === 0 || state === null){
+    if(count === 0){
         count= count+1;
         return(
             <div>

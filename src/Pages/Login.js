@@ -15,7 +15,7 @@ function Login () {
 
   const clickLogin = (email,password) =>{
     if(email.includes(tempEmail)===true && tempPassword[tempEmail.indexOf(email)]===password){
-      navigate("/",{state:{user:true}});
+      navigate("/Main",{state:{user:true}});
       // user value should be changed to true so that nav bar changes
     }
     else if(email.includes(tempEmail)===true && tempPassword[tempEmail.indexOf(email)]!==password){
@@ -35,10 +35,10 @@ function Login () {
           <input type="password" value ={Password} onChange={ (e)=> setPassword(e.target.value)}placeholder="password"/>
           <button onClick={(e)=>clickLogin(email,Password)}>Login</button>
           <p className="message">Not registered? <a href="Signup">Create an account</a></p>
-          <p className="other-way-to-signin">-----Easier Sign-in-----</p>
+          {/* <p className="other-way-to-signin">-----Easier Sign-in-----</p>
           <div className='google-Login'>
           <GoogleLogin></GoogleLogin>
-          </div>
+          </div> */}
           
         </form>
       </div>

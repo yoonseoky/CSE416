@@ -157,8 +157,8 @@
 .login-signup a:hover {
   color: black;
 }
-.login-profile{
-  width: 20px;
+.profileImage{
+  width: 30px;
 }
 
 /*Signup*/
