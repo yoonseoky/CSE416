@@ -7,6 +7,7 @@ import TimetablePage from './Pages/TimetablePage';
 import ProfReview from './Pages/ProfReview';
 import './App.css';
 import Signup from './Pages/Signup';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="/timetable" element={<TimetablePage />}></Route>
         <Route path="/profreview" element={<ProfReview />}></Route>
         <Route path="/Signup" element={<Signup />}></Route>
-        {/* <Route path="/EditProfile" element={<Edit />}></Route> */}
+        <Route path="/EditProfile" element={<Edit />}></Route>
       </Routes>
       </BrowserRouter>
     </div>

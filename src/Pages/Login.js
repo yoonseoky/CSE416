@@ -1,10 +1,10 @@
 import React,{useState}from 'react';
 import Nav from '../Component/nav';
-import GoogleLogin from '../Component/GoogleOAuth';
+// import GoogleLogin from '../Component/GoogleOAuth';
 import { useNavigate } from 'react-router-dom';
 
 
-const clientID = "807197922292-712nlt2ij625oqc3e0hkdjdmpvk6447j.apps.googleusercontent.com";
+// const clientID = "807197922292-712nlt2ij625oqc3e0hkdjdmpvk6447j.apps.googleusercontent.com";
 const tempEmail = ["gyuri.kim.2@stonybrook.edu"]
 const tempPassword = ["1234"]
 

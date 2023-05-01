@@ -12,7 +12,7 @@ const Nav = ({user}) => {
             </div>
             <div className="login-signup">
             <img className = "profileImage"src="account_default.svg" alt="default_profile"/>
-                 <Link to = '/EditProfile'>Gyuri Kim</Link>
+                 <Link to = '/EditProfile' state = {{user:true}} >Gyuri Kim</Link>
                  <Link to='/Main' state = {{user:false}}>Log out</Link>
             </div>
           </div>
