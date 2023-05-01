@@ -1,6 +1,25 @@
 import React from "react";
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
-function prof_nav() {
+function Prof_nav() {
+  const [Select, setSelected] = useState("");
+  const [name,setName] = useState("");
+  const navigate = useNavigate();
+
+  const handleSelect = (e) => {
+    setSelected(e.target.value);
+  };
+  const handleName = (e) =>{
+    setName(e.target.value);
+  }
+  const onClick = () =>{
+    navigate('/profreview1',{state:{user:true}})
+  }
+  const test = {
+    course: Select,
+    name: 'Arthur Lee'
+  }
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -9,21 +28,27 @@ function prof_nav() {
         </a>
         <div className="navbar-dropdown">
           <label htmlFor="course-dropdown" className="navbar-label"></label>
-          <select id="course-dropdown" className="navbar-select">
+          <select id="course-dropdown" onChange = {handleSelect} className="navbar-select">
             <option value="">Select a course</option>
-            <option value="course1">CSE</option>
-            <option value="course2">AMS</option>
-            <option value="course3">MEC</option>
-            <option value="course4">BUS</option>
+            <option value="CSE">CSE</option>
+            <option value="AMS">AMS</option>
+            <option value="MEC">MEC</option>
+            <option value="BUS">BUS</option>
+            <option value="CHI">CHI</option>
+            <option value="KOR">KOR</option>
           </select>
         </div>
         <form className="navbar-form">
-          <input type="text" placeholder="Professor Name" className="navbar-search" />
-          <button type="submit" className="navbar-button">Search</button>
+          <input 
+            type="text" 
+            placeholder="Professor Name" 
+            className="navbar-search" 
+            onChange={handleName}
+          />
+          <button type="submit" className="navbar-button" onClick={onClick}>Search</button>
         </form>
       </div>
     </nav>
   );
 }
-
-export default prof_nav;
+export default Prof_nav;

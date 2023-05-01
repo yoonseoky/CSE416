@@ -170,7 +170,7 @@
   background-color: #f5f5f5;
 }
 
-input {
+.form input[type = "text"], .form input[type = "email"], .form input[type = "password"]{
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -180,6 +180,7 @@ input {
   font-size: 16px;
   color: #333;
 }
+
 
 button {
   padding: 10px 20px;
@@ -332,23 +333,23 @@ body{
 .navbar-select {
   padding: 5px;
   border-radius: 5px;
+  border: none;
   height: 38px;
   background-color: #f5f5f5;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-search {
   padding: 5px;
   width:400px;
-  height: 35px;
-  margin-top: 8px;
+  height: 38px;
   margin-right: 15px;
   border-radius: 5px;
   margin-right: 10px;
   background-color: #f5f5f5;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-button {
@@ -373,34 +374,36 @@ body{
   align-items: center;
 }
 /*Edit Profile*/
+.Edit_background{
+  background-color: whitesmoke;
+  height: 100vh;
+}
 .profile {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #f5f5f5;
-  padding: 20px;
+  width: 500px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 30px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   margin-top: 200px;
 }
 
-h1 {
-  text-align: center;
-}
-
 label {
   display: block;
+  margin-top: 10px;
   margin-bottom: 10px;
   padding-right: 20px;
 }
 
 input {
-  display: block;
-  width: 100%;
+  width: 400px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none;
+  background-color: #f7f7f7;
+  border-radius: 4px;
   margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 button[type="submit"] {
@@ -414,4 +417,109 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #3e8e41;
+}
+/*Recent_review*/
+.Recent_background{
+  background-color: whitesmoke;
+  height: 100vh;
+}
+.Recent_Review{
+  font-size: 35px;
+  font-weight: bold;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  padding-left: 20%;
+  text-align: left;
+  margin: auto;
+}
+.Recent_box{
+  position: relative;
+  background-color:lightyellow;
+  margin: auto;
+  border-radius: 10px;
+  width: 60%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.Review1{
+  margin: auto;
+  border-bottom: solid;
+  border-color: #ccc;
+}
+.courseinfo{
+  position: relative;
+  text-align: left;
+  padding: 15px;
+  padding-bottom: 0;
+  font-size: 20px;
+}
+.Rate{
+  position: absolute;
+  float: left;
+  padding-left: 90px;
+  font-size: 50px;
+  font-weight: bold;
+}
+.comments{
+ position: relative;
+ text-align: left;
+ padding-left: 30px;
+ padding-top: 10px;
+ font-weight: bold;
+}
+.comments_text{
+  position: absolute;
+  text-align: left;
+  padding-left: 80px;
+}
+.comment_box{
+  position: relative;
+  background-color:white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  height: 100px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  margin-left: 180px;
+  margin-right: 20px;
+}
+/*Prof review page*/
+.Rating_background{
+  background-color: whitesmoke;
+  height: 130px;
+}
+.Rating{
+  float: left;
+  position: relative;
+  width: 250px;
+  height: 100px;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-left: 100px;
+  background-color:#ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+.overall{
+ font-size: 40px;
+ font-weight: bold;
+ text-align: left;
+ padding-left: 30px;
+ margin: 0;
+}
+.prof_name{
+  text-align: right;
+  font-size: large;
+  font-weight: bold;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.Rate_button{
+  width: 150px;
+  float: left;
+  margin-top: 18px;
+  margin-left: 10px;
+  
+}
+.rate_btn{
+  margin-top: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }

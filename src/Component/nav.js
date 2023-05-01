@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link } from 'react-router-dom';
 const Nav = ({user}) => {
+  const userName = {username:"Gyuri Kim"}
     if( user === true){
         return (
             <div className="top-bar">
@@ -12,8 +13,8 @@ const Nav = ({user}) => {
             </div>
             <div className="login-signup">
             <img className = "profileImage"src="account_default.svg" alt="default_profile"/>
-                 <Link to = '/EditProfile' state = {{user:true}} >Gyuri Kim</Link>
-                 <Link to='/Main' state = {{user:false}}>Log out</Link>
+                 <Link to = '/EditProfile' state = {{user:true}} >{userName.username}</Link>
+                 <Link to='/' state = {{user:false}}>Log out</Link>
             </div>
           </div>
             );
@@ -23,13 +24,13 @@ const Nav = ({user}) => {
             <div className="top-bar">
               <div className="app-name">SUKOCO</div>
               <div className="nav-links">
-                <Link to="/Main"state = {{user:false}}>Home</Link>
-                <Link to="/Timetable"state = {{user:false}}>Timetable</Link>
-                <Link to="/ProfReview"state = {{user:false}}>ProfReview</Link>
+                <Link to="/"state = {{user:false}}>Home</Link>
+                <Link to="/"state = {{user:false}}>Timetable</Link>
+                <Link to="/"state = {{user:false}}>ProfReview</Link>
               </div>
               <div className="login-signup">
                 <Link to="/" state = {{user:false}}>Log In</Link>
-                <Link to="/signup"state = {{user:false}}>Sign Up</Link>
+                <Link to="/"state = {{user:false}}>Sign Up</Link>
               </div>
             </div>
           );

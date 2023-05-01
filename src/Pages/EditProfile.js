@@ -9,7 +9,6 @@ function EditProfile() {
 
   const location = useLocation();
   const state = location.state.user;
-  console.log(state);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,24 +16,23 @@ function EditProfile() {
   };
 
   return (
-      <div>
+      <div className="Edit_background">
         <Nav user = {state}/>
         <div className="profile">
-        <h1>Edit Profile</h1>
         <form onSubmit={handleSubmit}>
             <label>
-            Name:
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" value={name} placeholder="Name" onChange={(e) => setName(e.target.value)} />
             </label>
+            <br></br>
             <label>
-            Password:
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </label>
+            <br></br>
             <label>
-            Confirm Password:
-            <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+            <input type="password" value={confirmPassword} placeholder="Confirm Password" onChange={(e) => setConfirmPassword(e.target.value)} />
             </label>
-            <button type="submit">Save Changes</button>
+            <br></br>
+            <button type="submit" onClick={handleSubmit}>Save Changes</button>
         </form>
         </div>
     </div>
