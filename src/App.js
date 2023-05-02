@@ -9,6 +9,7 @@ import ProfReview1 from './Pages/Prof_review';
 import './App.css';
 import Signup from './Pages/Signup';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import RateProf from './Pages/RateProf';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Signup" element={<Signup />}></Route>
         <Route path="/EditProfile" element={<Edit />}></Route>
         <Route path="/profreview1" element={<ProfReview1/>}></Route>
+        <Route path="/RateProf" element={<RateProf/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>

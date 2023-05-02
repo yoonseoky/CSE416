@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../Component/nav';
 import ProfNav from '../Component/prof_nav'
-import R_Reviews from '../Component/Recent_review'
+import RReviews from '../Component/Recent_review'
 import { useLocation } from 'react-router-dom';
 
 function ProfReview() {
@@ -11,15 +11,15 @@ function ProfReview() {
       return(
         <div>
           <Nav user = {state}></Nav>
-          <ProfNav user = {state}></ProfNav>
+          <ProfNav></ProfNav>
         </div>
       );
     }
       return (
         <div>
           <Nav user = {state}></Nav>
-          <ProfNav user = {state}></ProfNav>
-          <R_Reviews></R_Reviews>
+          <ProfNav ></ProfNav>
+          <RReviews></RReviews>
         </div>
       );
     

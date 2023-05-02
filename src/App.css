@@ -523,3 +523,51 @@ button[type="submit"]:hover {
   margin-top: 50px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
+/*Rate Prof page*/
+.upper-bar{
+  height: 80px;
+  background-color: #61dafb;
+  box-shadow: 0 2px 7px rgba(0, 0, 0.1, 0.8);
+}
+.professor-name{
+  font-size: 30px;
+  text-align: left;
+  padding-left: 100px;
+  padding-top: 15px;
+  font-weight: 300;
+}
+.selectCourse-background{
+  opacity: 0.9;
+}
+.select-course{
+  background-color: white;
+  border-radius: 80px;
+  width: 900px;
+  height: 150px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin: auto;
+}
+.select-courseP{
+  text-align: left;
+  padding-left: 200px;
+  font-size: 25px;
+  padding-top: 25px;
+}
+.selectDropbar{
+  display:inline-block;
+  margin-left: 200px;
+  font-size: 20px;
+  text-align: center;
+  width: 300px;
+  margin: 30px;
+  border-radius: 10px;
+}
+.rateComment{
+  font-size: 20px;
+  margin-left: 20px;
+  text-align: center;
+  width: 500px;
+  height: 100px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}

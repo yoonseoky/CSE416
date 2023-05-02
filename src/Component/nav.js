@@ -30,7 +30,7 @@ const Nav = ({user}) => {
               </div>
               <div className="login-signup">
                 <Link to="/" state = {{user:false}}>Log In</Link>
-                <Link to="/"state = {{user:false}}>Sign Up</Link>
+                <Link to="/Signup"state = {{user:false}}>Sign Up</Link>
               </div>
             </div>
           );
