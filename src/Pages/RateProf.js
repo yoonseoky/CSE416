@@ -6,6 +6,9 @@ function RateProf() {
   const location = useLocation();
   const state = location.state.user;
   const profName = location.state.profName;
+  const sumbitInfo = () =>{
+
+  }
     return (
       <div>
         <Nav user = {state}></Nav>
@@ -61,9 +64,10 @@ function RateProf() {
             {/* <option value="2023 fall">2023 fall</option> */}
           </select></p>
         </div>
-        <div className='select-course'>
+        <div className='select-courseC'>
           <p className='select-courseP'> Comment:
           <input className='rateComment' type="text"></input></p>
+          <button className='rateSubmit' type='submit' onClick={sumbitInfo}>Submit</button>
         </div>
         </div>
       </div>

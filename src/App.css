@@ -170,17 +170,26 @@
   background-color: #f5f5f5;
 }
 
-.form input[type = "text"], .form input[type = "email"], .form input[type = "password"]{
+.form input[type = "text"], .form input[type = "password"]{
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   border-radius: 4px;
   border: none;
   background-color: #f7f7f7;
   font-size: 16px;
   color: #333;
 }
-
+.form input[type = "email"]{
+  width: 100%;
+  padding: 10px;
+  /* margin-bottom: 15px; */
+  border-radius: 4px;
+  border: none;
+  background-color: #f7f7f7;
+  font-size: 16px;
+  color: #333;
+}
 
 button {
   padding: 10px 20px;
@@ -483,8 +492,9 @@ button[type="submit"]:hover {
 }
 /*Prof review page*/
 .Rating_background{
-  background-color: whitesmoke;
+  background-color: lightcyan;
   height: 130px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 .Rating{
   float: left;
@@ -523,6 +533,16 @@ button[type="submit"]:hover {
   margin-top: 50px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
+.Prof_comments{
+  background-color: #f5f5f5;
+}
+.commentBox{
+  background-color: lightskyblue;
+  margin: auto;
+  border-radius: 20px;
+  width: 1300px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
+}
 /*Rate Prof page*/
 .upper-bar{
   height: 80px;
@@ -541,9 +561,17 @@ button[type="submit"]:hover {
 }
 .select-course{
   background-color: white;
-  border-radius: 80px;
-  width: 900px;
+  /* border-radius: 10px; */
+  width: 1100px;
   height: 150px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin: auto;
+}
+.select-courseC{
+  background-color: white;
+  /* border-radius: 10px; */
+  width: 1100px;
+  height: 200px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   margin: auto;
 }
@@ -570,4 +598,7 @@ button[type="submit"]:hover {
   height: 100px;
   border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.rateSubmit{
+  width: 200px;
 }

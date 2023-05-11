@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function Prof_nav() {
   const [Select, setSelected] = useState("");
@@ -17,13 +18,9 @@ function Prof_nav() {
   }
   const onClick = () =>{
     if(window.location.pathname === "/profreview1"){
-      window.location.reload()
+        window.location.reload()
     }
   }
-  // const test = {
-  //   course: Select,
-  //   name: 'Arthur Lee'
-  // }
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -52,7 +49,6 @@ function Prof_nav() {
           <Link to = "/profreview1" state = {{user:true, profName:name.toUpperCase(), selectedCourse:Select}}>
             <button type="submit" className="navbar-button" onClick={onClick}>Search</button>
           </Link>
-          
         </form>
       </div>
     </nav>
