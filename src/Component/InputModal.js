@@ -4,28 +4,15 @@ import {
     DialogActions,
     DialogContent,
     DialogTitle,
-    // FormControl,
-    // FormControlLabel,
-    // FormLabel,
-    // MenuItem,
-    // Radio,
-    // RadioGroup,
     TextField,
   } from '@mui/material';
+  import axios from 'axios';
   import React, { useCallback } from 'react';
   import { Controller, useForm } from 'react-hook-form';
   import { useRecoilState } from 'recoil';
   import { timeTableState } from '../Component/store';
   import { v4 as uuidv1 } from 'uuid';
   import { useEffect } from 'react';
-  
-//   const timeOptions = new Array(12).fill(null).map((e, i) => ({
-//     value: i + 9,
-//     label: i + 9,
-//   }));
-  
-//   const checkOverLap = (A, B) =>
-//     B.start < A.start ? B.end > A.start : B.start < A.end;
   
   function InputModal({
     showModal,
@@ -34,7 +21,7 @@ import {
     startTimeData = 9,
     endTimeData = 10,
     lectureNameData = '',
-    colorData = '#FFFFFF',
+    colorData = '#DFFFFF',
     idNum,
   }) {
     const {
@@ -48,11 +35,11 @@ import {
     useEffect(() => {
       if (showModal) {
         reset({
-          lecturename: lectureNameData,
-          day: dayData,
-          startTime: startTimeData,
-          endTime: endTimeData,
-          lectureColor: colorData,
+            lecturename: lectureNameData,
+            day: dayData,
+            startTime: startTimeData,
+            endTime: endTimeData,
+            lectureColor: colorData,
         });
       }
     }, [
@@ -65,25 +52,23 @@ import {
       startTimeData,
     ]);
     //timetable API call 해서 정보 가져오기
-    const Submit = useCallback(
-      ({ lectureName, day, startTime, endTime, lectureColor }) => {
+    function Submit({courseid}) {
+        //API call 해서 정보 가져온걸 courseid와 매칭 되는 정보를 data에 넣기
         const data = {
-          start: startTime,
-          end: endTime,
-          name: lectureName,
-          color: lectureColor,
+          start: 10,
+          end: 11,
+          name: "CSE101",
+          color: '#DFFFFF',
           id: uuidv1(),
         };
-  
+      
         setttimeTableData((oldTimeData) => ({
           ...oldTimeData,
-          [day]: [...oldTimeData[day], data],
+          ['wed']: [...oldTimeData['wed'], data],
         }));
-  
+      
         handleClose();
-      },
-      [handleClose, setttimeTableData, timeTableData],
-    );
+      }
   
     const Edit = useCallback(
       ({ lectureName, day, startTime, endTime, lectureColor }) => {
@@ -118,7 +103,7 @@ import {
     return (
       <Dialog open={showModal} onClose={handleClose}>
         <form onSubmit={handleSubmit(idNum ? Edit : Submit)}>
-          <DialogTitle align="center"> 강의 정보 입력</DialogTitle>
+          <DialogTitle align="center">Type Course Number</DialogTitle>
           <DialogContent style={{ width: '400px' }}>
             <Controller
               control={control}

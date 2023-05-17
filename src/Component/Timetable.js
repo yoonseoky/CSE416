@@ -25,36 +25,37 @@ const TimeTable = ({ classes }) => {
     seteditInfo({});
   }, []);
 
-  const Edit = useCallback(
-    (day, id) => {
-      const { start, end, name, color } = timeTableData[day].find(
-        (lectureInfo) => lectureInfo.id === id,
-      );
-      seteditInfo({
-        dayData: day,
-        startTimeData: start,
-        endTimeData: end,
-        lectureNameData: name,
-        colorData: color,
-        idNum: id,
-      });
-      setshowModal(true);
-    },
-    [timeTableData],
-  );
+  function Edit(day, id) {
+    const { start, end, name, color } = timeTableData[day].find(
+      (lectureInfo) => lectureInfo.id === id
+    );
+    seteditInfo({
+      dayData: day,
+      startTimeData: start,
+      endTimeData: end,
+      lectureNameData: name,
+      colorData: color,
+      idNum: id,
+    });
+    setshowModal(true);
+  }  
   return (
     <>
       <TableContainer
         sx={{
           width: '100%',
           minWidth: '650px',
-          marginLeft: 'auto',
+          marginTop: '10px',
+          marginLeft: '10px',
           marginRight: 'auto',
-          backgroundColor: '#f5f5f5'
+          marginBottom: '10px',
+          backgroundColor: '#f5f5f5',
+          borderRadius: '20px',
+          boxShadow: '0 0 10px rgba(0.9, 0, 0.9, 0.3)',
         }}
       >
-        <Typography variant="h2" fontSize = {40}fontWeight={5} component="div" align="center">
-          TimeTable
+        <Typography variant="h2" fontSize = {40}fontWeight={5} paddingTop={'10px'}component="div" align="center">
+          
         </Typography>
         <Button
           variant="contain"
@@ -66,7 +67,7 @@ const TimeTable = ({ classes }) => {
         <Table className={classes.Table}>
           <TableHead>
             <TableRow>
-              <TableCell align="center" width={100}>
+              <TableCell align="center" width={200}>
                 Time
               </TableCell>
               <TableCell align="center" width={200}>

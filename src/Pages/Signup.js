@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Nav from '../Component/nav';
 function Signup() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you can handle the form submission, for example, by sending the data to a server or performing validation
   };
   const Submit_filter = (firstName,lastName,email,password) =>{
-    console.log(email.slice(-15))
+    
     if(firstName===''||lastName===''){
       alert("Please type your name.")
     }
@@ -19,6 +22,10 @@ function Signup() {
     }
     else if(password===''){
       alert("Please enter the password.")
+    }
+    else{
+      alert("Successfully Signed-up")
+      navigate("/",{state:{user:true}});
     }
   }
   return (
