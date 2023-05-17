@@ -1,86 +1,110 @@
-import React, { useState } from 'react';
+import { Button,Table,TableBody,TableCell,TableContainer,TableHead,TableRow,Typography,} from '@mui/material';
+import React, { useCallback } from 'react';
+import TimeTableRow from './TimeTableRow';
+import { withStyles } from '@mui/styles';
+import { AddBox } from '@mui/icons-material';
+import { useState } from 'react';
+import InputModal from '../Component/InputModal';
+import { timeTableState } from '../Component/store';
+import { useRecoilValue } from 'recoil';
+const hourData = Array.from({ length: 13 }, (i, j) => j + 9);
+const styles = () => ({
+  Table: {
+    '& th, td': {
+      border: '1px solid rgba(224,224,224,1)',
+    },
+  },
+});
 
+const TimeTable = ({ classes }) => {
+  const timeTableData = useRecoilValue(timeTableState);
+  const [showModal, setshowModal] = useState(false);
+  const [editInfo, seteditInfo] = useState({});
+  const handleClose = useCallback(() => {
+    setshowModal(false);
+    seteditInfo({});
+  }, []);
 
-const Timetable = () => {
-  const [courses, setCourses] = useState([]);
-
-  const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-  const timesOfDay = ['8:00', '9:00', '10:00', '11:00', '12:00', '1:00', '2:00', '3:00', '4:00', '5:00'];
-
-  const addCourse = (courseId) => {
-    // Simulated course data for testing
-    const courseData = {
-      id: courseId,
-      name: `Course ${courseId}`,
-      instructor: `Instructor ${courseId}`,
-      classroom: `Classroom ${courseId}`,
-      day: daysOfWeek[Math.floor(Math.random() * daysOfWeek.length)],
-      start: timesOfDay[Math.floor(Math.random() * timesOfDay.length)],
-      end: timesOfDay[Math.floor(Math.random() * timesOfDay.length)]
-    };
-
-    // Calculate the course block location on the timetable
-    const startIdx = timesOfDay.findIndex(time => time === courseData.start);
-    const endIdx = timesOfDay.findIndex(time => time === courseData.end);
-    const dayIdx = daysOfWeek.findIndex(day => day === courseData.day);
-
-    // Generate the course block element
-    const courseBlock = (
-      <div
-        className="course-block"
-        style={{
-          gridColumnStart: dayIdx + 2,
-          gridColumnEnd: dayIdx + 3,
-          gridRowStart: startIdx + 1,
-          gridRowEnd: endIdx + 2,
+  const Edit = useCallback(
+    (day, id) => {
+      const { start, end, name, color } = timeTableData[day].find(
+        (lectureInfo) => lectureInfo.id === id,
+      );
+      seteditInfo({
+        dayData: day,
+        startTimeData: start,
+        endTimeData: end,
+        lectureNameData: name,
+        colorData: color,
+        idNum: id,
+      });
+      setshowModal(true);
+    },
+    [timeTableData],
+  );
+  return (
+    <>
+      <TableContainer
+        sx={{
+          width: '100%',
+          minWidth: '650px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          backgroundColor: '#f5f5f5'
         }}
       >
-        <div className="course-title">{courseData.name}</div>
-        <div className="course-info">
-          <div className="course-instructor">{courseData.instructor}</div>
-          <div className="course-classroom">{courseData.classroom}</div>
-        </div>
-        <button className="delete-button" onClick={() => deleteCourse(courseData.id)}>X</button>
-      </div>
-    );
-
-    setCourses([...courses, courseBlock]);
-  };
-
-  const deleteCourse = (courseId) => {
-    const updatedCourses = courses.filter(course => course.props.children.props.id !== courseId);
-    setCourses(updatedCourses);
-  };
-
-  return (
-    <div className="timetable">
-      <div className="timetable-header">
-        <div className="empty-cell"></div>
-        {daysOfWeek.map((day, idx) => (
-          <div key={idx} className="day-of-week">{day}</div>
-        ))}
-      </div>
-      {timesOfDay.map((time, idx) => (
-        <div key={idx} className="timetable-row">
-          <div className="time-of-day">{time}</div>
-          {daysOfWeek.map((day, idx) => (
-            <div key={`${day}-${time}`} className="timetable-cell"></div>
-          ))}
-        </div>
-      ))}
-      {courses}
-      <form onSubmit={(event) => {
-        event.preventDefault();
-        const courseId = event.target.courseId.value;
-        addCourse(courseId);
-        event.target.reset();
-      }}>
-        <label htmlFor="courseId">Course ID:</label>
-        <input type="text" id="courseId" />
-        <button type="submit">Add Course</button>
-      </form>
-    </div>
+        <Typography variant="h2" fontSize = {40}fontWeight={5} component="div" align="center">
+          TimeTable
+        </Typography>
+        <Button
+          variant="contain"
+          sx={{ float: 'right' }}
+          endIcon={<AddBox />}
+          onClick={() => setshowModal(true)}
+        >Add course
+        </Button>
+        <Table className={classes.Table}>
+          <TableHead>
+            <TableRow>
+              <TableCell align="center" width={100}>
+                Time
+              </TableCell>
+              <TableCell align="center" width={200}>
+                Mon
+              </TableCell>
+              <TableCell align="center" width={200}>
+                Tue
+              </TableCell>
+              <TableCell align="center" width={200}>
+                Wed
+              </TableCell>
+              <TableCell align="center" width={200}>
+                Thur
+              </TableCell>
+              <TableCell align="center" width={200}>
+                Fri
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {hourData.map((time, index) => (
+              <TableRow key={index}>
+                <TableCell align="center">{`${time}:00-${
+                  time + 1
+                }:00`}</TableCell>
+                <TimeTableRow timeNum={time} Edit={Edit} />
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <InputModal
+        showModal={showModal}
+        handleClose={handleClose}
+        {...editInfo}
+      />
+    </>
   );
 };
 
-export default Timetable;
+export default withStyles(styles)(TimeTable);

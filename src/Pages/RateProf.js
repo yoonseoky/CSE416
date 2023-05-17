@@ -7,7 +7,7 @@ function RateProf() {
   const state = location.state.user;
   const profName = location.state.profName;
   const sumbitInfo = () =>{
-
+    
   }
     return (
       <div>

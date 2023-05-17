@@ -272,11 +272,11 @@ body{
 .course-block {
   background-color: #007bff;
   color: white;
-  padding: 5px;
+  padding: 15px;
   border-radius: 5px;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  /* top: 50%;
+  left: 50%; */
   transform: translate(-50%, -50%);
 }
 
@@ -535,9 +535,10 @@ button[type="submit"]:hover {
 }
 .Prof_comments{
   background-color: #f5f5f5;
+  min-height: 80vh;
 }
 .commentBox{
-  background-color: lightskyblue;
+  background-color: #64B5F6;
   margin: auto;
   border-radius: 20px;
   width: 1300px;

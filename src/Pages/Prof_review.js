@@ -16,41 +16,6 @@ function Prof_review() {
         Instructor: "Arthur Lee",
         Rate: 5,
         comments:"This is a comment"
-    },{
-        course: "CSE",
-        coursenumber: "114",
-        courseName:"Introduction to Object-Oriented Programming",
-        Instructor: "Antonino Mione",
-        Rate: 4,
-        comments:"This is a comment"
-    },{
-        course: "CSE",
-        coursenumber: "214",
-        courseName:"Data Structure",
-        Instructor: "Byungkon Kang",
-        Rate: 4,
-        comments:"This is a comment"
-    },{
-        course: "CSE",
-        coursenumber: "214",
-        courseName:"Data Structure",
-        Instructor: "Byungkon Kang",
-        Rate: 4,
-        comments:"This is a comment"
-    },{
-        course: "CSE",
-        coursenumber: "214",
-        courseName:"Data Structure",
-        Instructor: "Byungkon Kang",
-        Rate: 4,
-        comments:"This is a comment"
-    },{
-        course: "CSE",
-        coursenumber: "214",
-        courseName:"Data Structure",
-        Instructor: "Byungkon Kang",
-        Rate: 4,
-        comments:"This is a comment"
     }]
     
     const profInfo  = {
